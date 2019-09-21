@@ -1,0 +1,419 @@
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+h1,h2,h3,p {
+    margin: 0;
+}
+body {
+    font: 16px/1.5 'Gotham Pro';
+    color: #292929;
+    font-weight: 400;
+}
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+header {
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    width: 230px;
+    height: 40px;
+}
+.call {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+.call .phone {
+    margin-right: 30px;
+}
+.call a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #292929;
+    padding: 12px 22px;
+    border: 2px solid #292929;
+    font-weight: 500;
+    font-size: 12px;
+}
+.phone-number {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+.phone-text {
+    color: #969696;
+    font-size: 11px;
+}
+nav {
+    position: absolute;
+    left: 0; right: 0;
+    top: 100px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: #ffcc00;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    width: 150px;
+    height: 60px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a:hover {
+    background-color: #caa200;
+}
+main {
+    height: 550px;
+    background: url('../img/bg.jpg') center center/ cover no-repeat;
+    margin-top: 30px;
+    position: relative;
+    padding: 170px 0 140px;
+}
+main h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+main p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    color: #fff;
+    margin: 40px 0 0;
+}
+/* main .main-button {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+} */
+main .main-button button {
+    width: 200px;
+    height: 50px;
+    background-color: #ffd200;
+    padding: 20px 28px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0d0d0d;
+    border: 0;
+    margin-top: 65px;
+    line-height: 0;
+    cursor: pointer;
+    outline: none;
+}
+main .main-button span {
+    margin-left: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+main .main-button span a {
+    margin-left: 12px;
+    color: #fff;
+    cursor: pointer;
+}
+.materials, .advantage, .popular, .service {
+    padding: 80px 0;
+    text-align: center;
+}
+.materials h2, .advantage h2, .popular h2, .service h2 {
+    text-transform: uppercase;
+    color: #292929;
+    font-size: 20px;
+    font-weight: 700;
+}
+.materials-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+.materials-item {
+    width: 300px;
+    min-height: 470px;
+    border: 2px solid #f6f6f6;
+    padding: 36px 0;
+}
+.materials-item img {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 145px;
+}
+.materials-item h3 {
+    margin-top: 32px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #292929;
+}
+.materials-item p {
+    width: 225px;
+    margin: 0 auto;
+    color: #626262;
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 19px;
+}
+.materials-item .price {
+    color: #0f0f0f;
+    font-family: "Gotham Pro";
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 29px;
+}
+.materials-item button {
+    margin-top: 32px;
+    width: 180px;
+    height: 50px;
+    border: 0;
+    padding: 20px 55px;
+    color: #0d0d0d;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 0;
+    background-color: #ffd200;
+    cursor: pointer;
+    outline: none;
+}
+.advantage, .service {
+    min-height: 490px;
+    background-color: #f4f4f4;
+}
+.advantage .container, .popular .container, .service .container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.advantage .advantage-item, .service .service-item {
+    width: 300px;
+    height: 255px;
+    border: 2px solid #fff;
+    padding: 38px 0 40px;
+    transition: 0.7s;
+    cursor: pointer;
+}
+.advantage .advantage-item:hover {
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 22px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -11px rgba(0,0,0,0.75);
+}
+.advantage .advantage-item h3, .service .service-item h3 {
+    color: #292929;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.advantage .advantage-item p{
+    margin: 15px auto 0; 
+    color: #292929;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    width: 240px;
+}
+.popular {
+    min-height: 593px;
+}
+.popular .popular-item {
+    border: 2px solid #f6f6f6;
+    padding: 18px;
+    width: 230px;
+    height: 345px;
+    position: relative;
+}
+.popular .big {
+    min-height: 362px;
+}
+.popular .popular-item a{
+    display: block;
+    color: #292929;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 17px;
+}
+.popular .popular-item .price {
+    margin-top: 17px;   
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: 500;
+}
+.popular .popular-item .price span{
+    color: #979797;
+    font-size: 10px;
+    font-weight: 400;
+    text-decoration: line-through;
+    margin-right: 14px;
+}
+.popular .popular-item button{
+    width: 180px;
+    height: 50px;
+    background-color: #ffd200;
+    border: 0;
+    margin-top: 17px;
+    color: #0d0d0d;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.popular .popular-item .sale {
+    display: block;
+    position: absolute;
+    top: 30px; left: 30px;
+}
+.black {
+    color: #000 !important;
+}
+.service .service-item {
+    padding: 45px 0 34px;
+}
+.service .service-item h3 {
+    text-decoration: underline;
+}
+.service .service-item:last-child {
+    padding: 33px 0 34px;
+}
+.map {
+    height: 520px;
+    background: url('../img/map.jpg') center center/ cover no-repeat;
+}
+.map .container {
+    position: relative;
+}
+.map .map-box {
+    position: absolute;
+    top: 80px; right: 0;
+    background: #fff;
+    width: 360px;
+    height: 380px;
+    padding: 60px 0 70px 60px;
+    text-align: left;
+}
+.map .map-box h3 {
+    color: #292929;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.map .map-box .map-item {
+    /* width: 165px; */
+    height: 42px;
+    padding-left: 30px;
+    color: #292929;
+    line-height: 15px;
+}
+.map .map-box .phone {
+    background: url('../img/phone.png') left top no-repeat;
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+} 
+.map .map-box .point {
+    background: url('../img/point.png') left top no-repeat;
+    margin-top: 40px;
+    font-weight: 400;
+}
+.map .map-box .message {
+    background: url('../img/message.png') left top no-repeat;
+    margin-top: 40px;
+    line-height: 7px;
+}
+.map .map-box .message a {
+    color: #292929;
+}
+footer {
+    min-height: 196px;
+    padding: 50px 0 43px;
+    background: #292929;
+    color: #fff;
+    font-size: 12px;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+footer .block-left, footer .block-right {
+    width: 225px;
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer .block-right {
+    text-align: right;
+}
+footer .block-right .phone {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;  
+}
+footer .block-right .text {
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+footer .block-right button {
+    border: 2px solid #fff;
+    background: none;
+    width: 160px;
+    height: 40px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 26px;
+    margin-right: 0;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.5s;
+}
+footer .block-right button:hover {
+    color: #292929;
+    background: #fff;
+}

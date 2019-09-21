@@ -1,0 +1,205 @@
+﻿<!-- Решение нелинейных уравнений методом
+  половинного деления и методом Мюллера
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SolveEquations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="plot2d(1)">
+
+    <!-- Ввод значений и кнопки управления  -->
+    <div class="main">
+        <!-- Холст Canvas -->
+        <canvas id="canvas" width="1400" height="800"></canvas>
+        <div class="form">
+            <form>
+                <h2>Выберите функцию y:</h2><br>
+                <select id="func">
+                    <option selected>x - sin(x) = 0.25</option>
+                    <option>2^(-x) = 10 - 0.5x^2</option>
+                    <option>2x - lg(x) - 7 = 0</option>
+                </select><br>
+                <h2>Введите отрезок x:</h2><br><br>
+                <div class="otrezok">
+                    <input value="-8" class="input" type="text">
+                    <h3>
+                        <</h3> <h3>X
+                    </h3>
+                    <h3>
+                        <</h3> <input value="8" class="input" type="text">
+                </div>
+                <h2>Введите погрешность:</h2><br>
+                <input id="eps" value="1" class="input" type="text">
+                <h2>Выберите масштаб графика:</h2><br>
+                <select id="size">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>4</option>
+                </select><br>
+            </form>
+            <button id="but2">ИЗМ. МАСШТАБ/ СБРОС</button><br>
+            <button id="but">ПОСТРОИТЬ ГРАФИК</button><br>
+            <button id="but3">ИТЕРАЦИЯ ПОЛ.ДЕЛ.</button><br>
+            <button id="but4">ИТЕРАЦИЯ МЮЛЛЕР</button><br>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    function plot2d(scale) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = "silver";
+        for (var i = 0; i < canvas.width; i += 25 * scale) {
+            for (var j = 0; j < canvas.height; j += 25 * scale) {
+                ctx.strokeRect(i, j, 25 * scale, 25 * scale);
+            }
+        }
+        ctx.strokeStyle = "red";
+        ctx.font = "8px sans-serif black";
+        for (var k = -canvas.width / (25 * scale) / 2, i = 0; i < canvas.width; k++, i += 25 * scale) {
+            if (k == 0)
+                continue;
+            ctx.strokeText(k.toFixed(0), i - 3, canvas.height / 2 + 15);
+            ctx.fillRect(i, canvas.height / 2 - 5, 1.5, 10);
+        }
+        for (var k = canvas.height / (25 * scale) / 2, i = 0; i < canvas.height; k--, i += 25 * scale) {
+            if (k == 0)
+                continue;
+            ctx.strokeText(k.toFixed(0), canvas.width / 2 + 10, i + 3);
+            ctx.fillRect(canvas.width / 2 - 5, i, 10, 2);
+        }
+        ctx.strokeStyle = "black";
+
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, 0);
+        ctx.lineTo(canvas.width / 2, canvas.height);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height / 2);
+        ctx.lineTo(canvas.width, canvas.height / 2);
+        ctx.stroke();
+    }
+
+    document.getElementById("but2").onclick = function build() {
+        ctx.lineWidth = 1;
+        var scale = document.getElementById("size").options.selectedIndex;
+        scale = Number(document.getElementById("size").options[scale].text);
+        plot2d(scale);
+    }
+
+    document.getElementById("but").onclick = function plot() {
+        var scale = document.getElementById("size").options.selectedIndex;
+        scale = Number(document.getElementById("size").options[scale].text);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 1;
+        var cx = canvas.width / 2;
+        var cy = canvas.height / 2;
+        var y;
+        var x = Number(document.getElementsByClassName('input')[0].value);
+        var end = Number(document.getElementsByClassName('input')[1].value);
+        ctx.beginPath();
+        ctx.moveTo(cx + x * 25 * scale, cy - (x - Math.sin(x) - 0.25) * 25 * scale);
+
+        var func = document.getElementById("func").options.selectedIndex;
+
+        function f(x) {
+            if (func == 0)
+                return x - Math.sin(x) - 0.25;
+            else if (func == 1)
+                return Math.pow(2, -x) - 10 + 0.5 * (x * x);
+            else
+                return 2 * x - Math.log10(x) - 7;
+        }
+
+
+
+        function drawFunc() {
+            x += 0.1;
+            ctx.lineTo(cx + x * 25 * scale, cy - f(x) * 25 * scale);
+            ctx.stroke();
+            if (x >= end) {
+                clearInterval(timer);
+            }
+        }
+        timer = setInterval(drawFunc, 30);
+
+        ctx.fillStyle = "royalblue";
+        var a = Number(document.getElementsByClassName('input')[0].value);
+        var b = Number(document.getElementsByClassName('input')[1].value);
+        var E = Number(document.getElementsByClassName('input')[2].value);
+        var c = 0,
+            i = 0,
+            k = 0;
+        var color = ["red", "orange", "blue", "green", "purple"];
+
+
+
+        document.getElementById('but3').onclick = function polov_del() {
+            if (Math.abs(b - a) <= E) {
+                alert("Ответ: x = " + c);
+                return c;
+            }
+            c = (a + b) / 2;
+            ctx.fillRect(cx + c * 25 * scale, cy - 250, 2, 500);
+            if (f(a) * f(c) <= 0)
+                b = c;
+            else if (f(b) * f(c) <= 0)
+                a = c;
+            else {
+                alert("Корней на указанном интервале нет!");
+                return;
+            }
+            ctx.beginPath();
+            if (k == color.length)
+                k = 0;
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = color[k];
+            k++;
+            x = a;
+            end = b;
+            timer = setInterval(drawFunc, 10);
+            ctx.stroke();
+            i++;
+        }
+
+        document.getElementById('but4').onclick = function muller() {
+            if (Math.abs(b - a) <= E) {
+                alert("Ответ: x = " + c);
+                return c;
+            }
+            c = (a + b) / 2;
+            ctx.fillRect(cx + c * 25 * scale, cy - 250, 2, 500);
+            if (f(a) * f(c) <= 0)
+                b = c;
+            else if (f(b) * f(c) <= 0)
+                a = c;
+            else {
+                alert("Корней на указанном интервале нет!");
+                return;
+            }
+            ctx.beginPath();
+            if (k == color.length)
+                k = 0;
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = color[k];
+            k++;
+            x = a;
+            end = b;
+            timer = setInterval(drawFunc, 10);
+            ctx.stroke();
+            i++;
+        }
+    }
+
+</script>
+
+</html>

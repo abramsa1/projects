@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    font: 12px Arial, Verdana, sans-serif;
+    color: #5d5d5d;
+    background: #f4f4f4;
+}
+.clear {
+    clear: both;
+}
+a {
+    color: #fe9b00;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+h2, h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #090909;
+    background: url('../images/link.png') no-repeat left 5px;
+    padding: 0 0 11px 30px;
+    line-height: 1;
+    border-bottom: 5px solid #090909;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+.top-line {
+    height: 17px;
+    background: #090909;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 20px 0 16px;
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 18px;
+}
+header a, header ul li {
+    float: left;
+}
+header ul {
+    float: right;
+}
+header ul li {
+    list-style-type: none;
+    margin: 28px 0px 0px 63px;
+}
+header ul li a:hover, .active {
+    color: #090909;
+    transform: scale(1.1);
+}
+.img {
+    height: 380px;
+    background: url('../images/main-img.jpg') no-repeat;
+    position: relative;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #c0c0c0;
+}
+.black-box {
+    width: 442px;
+    height: 42px;
+    background: black;
+    position: absolute;
+    bottom: 66px;
+    left: 35px;
+    padding: 0 6px 0 12px;
+}
+.black-box span {
+    text-transform: uppercase;
+    color: #999898;
+    font-weight: bold;
+    font-size: 15px;
+    float: left;
+    line-height: 42px;
+}
+.black-box a {
+    font-size: 15px;
+    background: url('../images/link_small.png') no-repeat right center;
+    padding-right: 17px;
+    float: right;
+    line-height: 42px;
+}
+.content {
+    margin-top: 25px;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #c0c0c0;
+}
+.content-left, .content-center, .content-right {
+    width: 283px;
+    float: left;
+    margin-right: 55px;
+}
+.content-left a {
+    margin: 0;
+    padding-left: 23px;
+    background: url('../images/link2.png') no-repeat left center;
+    line-height: 1;
+}
+.content-center ul {
+    padding-left: 0;
+}
+.content-center ul li {
+    list-style-type: none;
+    background: url('../images/check.png') no-repeat ;
+    padding-left: 30px;
+}
+.content-center ul li p{
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.content-right {
+    margin-right: 0;
+}
+.content-right p {
+    margin-bottom: 30px;
+}
+.content-right span{
+    font-style: italic;
+    color: #090909;
+    margin: 0;
+}
+.portfolio {
+    margin: 22px 0 26px;
+    padding-bottom: 39px;
+    border-bottom: 1px solid #c0c0c0;
+    overflow: hidden;
+}
+.portfolio h2 {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border: none;
+}
+.portf {
+    float: left;
+    margin-right: 32px;
+    position: relative;
+}
+.portf:last-child {
+    margin-right: 0;
+}
+.link {
+    width: 61px;
+    height: 20px;
+    background: #fe9b00;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    padding: 6px 6px 5px 10px;
+    line-height: 20px;
+    text-align: center;
+}
+.portf a {
+    color: #090909;
+    background: url('../images/link2.png') no-repeat right center;
+    padding-right: 12px;
+}
+.blog {
+    margin-bottom: 42px;
+}
+.left-blog {
+    width: 657px;
+    float: left;
+}
+.right-blog {
+    float: right;
+    width: 225px;
+}
+.right-blog img {
+    margin-right: 12px;
+}
+.right-blog h3 {
+    margin-bottom: 0;
+}
+.blog h3 {
+    padding-bottom: 0;
+    border: none;
+    font-size: 12px;
+    margin-bottom: 29px;
+    line-height: 1.6;
+}
+.blog p {
+    margin: 0
+}
+footer {
+    height: 100px;
+    background: #e2e2e2;
+}
+.footer-content {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+.footer-content img {
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+.text ul {
+    padding-top: 30px;
+    padding-left: 0;
+}
+.text p {
+    margin-top: 3px;
+}
+.text ul li {
+    list-style-type: none;
+    margin-right: 5px;
+    float: left;
+}
+.text a {
+    font: 12px Arial, Verdana, sans-serif;
+    color: #5d5d5d;
+    text-transform: capitalize;
+}

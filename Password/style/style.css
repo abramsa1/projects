@@ -1,0 +1,28 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+main h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+main h2 {
+  font-size: 25px;
+}
+main input {
+  border: 2px solid orange;
+  margin: 10px;
+  width: 60%;
+  height: 40px;
+  font-size: 15px;
+  padding-left: 10px;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
